@@ -66,4 +66,5 @@ function editTask(index) {
   }
 }
 
+// Inicializa ao carregar
 renderTasks();
