@@ -31,3 +31,14 @@ function toggleTask(index) {
   tasks[index].done = !tasks[index].done;
   renderTasks();
 }
+
+function editTask(index) {
+  const newTitle = prompt("Novo título:", tasks[index].title);
+  const newDesc = prompt("Nova descrição:", tasks[index].desc);
+
+  if (newTitle !== null && newTitle.trim() !== "") {
+    tasks[index].title = newTitle;
+    tasks[index].desc = newDesc;
+    renderTasks();
+  }
+}
