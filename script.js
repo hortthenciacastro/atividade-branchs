@@ -1,4 +1,6 @@
 function renderTasks() {
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
   const list = document.getElementById("task-list");
   list.innerHTML = "";
     li.innerHTML = `
@@ -45,6 +47,5 @@ function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 saveTasks();
-
-
+renderTasks(); 
 }
