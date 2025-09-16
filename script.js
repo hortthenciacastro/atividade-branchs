@@ -40,9 +40,11 @@ function editTask(index) {
     tasks[index].title = newTitle;
     tasks[index].desc = newDesc;
     renderTasks();
-  }
-}
+ }
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 saveTasks();
+
+
+}
