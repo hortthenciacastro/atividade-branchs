@@ -17,6 +17,8 @@ function addTask() {
 function renderTasks() {
   const list = document.getElementById("task-list");
   list.innerHTML = "";
+  renderTasks(); // <- chama após adicionar
+  document.getElementById("task-title").value = "";
 
   tasks.forEach((task) => {
     const li = document.createElement("li");
