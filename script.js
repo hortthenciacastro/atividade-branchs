@@ -29,3 +29,9 @@ function toggleTask(index) {
   tasks[index].done = !tasks[index].done;
   renderTasks();
 }
+function removeTask(index) {
+  if (confirm("Deseja remover esta tarefa?")) {
+    tasks.splice(index, 1);
+    renderTasks();
+  }
+}
