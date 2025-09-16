@@ -13,3 +13,14 @@ function addTask() {
   document.getElementById("task-title").value = "";
   document.getElementById("task-desc").value = "";
 }
+
+function renderTasks() {
+  const list = document.getElementById("task-list");
+  list.innerHTML = "";
+
+  tasks.forEach((task) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${task.title}</strong> - ${task.desc}`;
+    list.appendChild(li);
+  });
+}
