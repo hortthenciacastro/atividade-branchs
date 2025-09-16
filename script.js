@@ -1,0 +1,37 @@
+function renderTasks() {
+  const list = document.getElementById("task-list");
+  list.innerHTML = "";
+
+    li.innerHTML = `
+      <div>
+        <strong>${task.title}</strong> - ${task.desc}
+      </div>
+      <div>
+        <button onclick="toggleTask(${index})">✔️</button>
+        <button onclick="removeTask(${index})">🗑️</button>
+      </div>
+    `;
+  tasks.forEach((task, index) => {
+    const li = document.createElement("li");
+    if (task.done) li.classList.add("completed");
+
+    li.innerHTML = `
+      <div>
+        <strong>${task.title}</strong> - ${task.desc}
+      </div>
+      <button onclick="toggleTask(${index})">✔️</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+function toggleTask(index) {
+  tasks[index].done = !tasks[index].done;
+  renderTasks();
+}
+function removeTask(index) {
+  if (confirm("Deseja remover esta tarefa?")) {
+    tasks.splice(index, 1);
+    renderTasks();
+  }
+}
